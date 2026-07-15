@@ -1,33 +1,32 @@
 #The i3 Configuration and Download Protocol
-(The Fedora i3 Spin Branch)
+(The Debian Branch)
 
 ## Base Packages
 
 ```
-sudo dnf install vim vim-X11
+sudo apt install vim vim-gtk4
                  git
                  zathura
+                 firefox
 ```
 
 ### Chrome
+Install the executable from [this link](https://www.google.com/chrome/)
 ```
-sudo dnf install fedora-workstation-repositories
-sudo dnf config-manager setopt google-chrome.enabled=1
-sudo dnf install google-chrome-stable
+sudo apt install <path-to-executable>
 ```
 
 ### Spotify
 ```
-sudo dnf install \
- https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+curl -sS https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
-sudo dnf install lpf-spotify-client
-lpf update
+sudo apt-get update && sudo apt-get install spotify-client
 ```
 
 ### TripleA (for fun)
 ```
-sudo dnf install java-latest-openjdk
+sudo apt install default-jre
 ```
 Download Executable from [this link](https://triplea-game.org/download/)
 ```
@@ -38,13 +37,20 @@ chmod +x ./TripleA_*unix.sh && ./TripleA_*unix.sh
 ### GitHub CLI Install and Configuration
 To install:
 ```
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
+(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
 ```
 To upgrade:
 ```
-sudo dnf update gh
+sudo apt update
+sudo apt install gh
 ```
 Auth Login:
 ```
