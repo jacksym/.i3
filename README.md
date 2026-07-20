@@ -6,7 +6,15 @@
 ```
 sudo dnf install vim vim-X11
                  git
+                 tar unzip
+                 llvm clang clang-devel
                  zathura
+```
+
+## Sound
+
+```
+sudo dnf install jack pulseaudio
 ```
 
 <details>
@@ -21,6 +29,24 @@ sudo dnf install google-chrome-stable
 ```
 
 </details>
+
+<details>
+<summary> <strong>
+GitHub CLI Install and Configuration
+</strong> </summary>
+
+To install:
+```
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+```
+Auth Login:
+```
+gh auth login
+```
+</details>
+
 
 <details>
 <summary> <strong>
@@ -53,20 +79,107 @@ chmod +x ./TripleA_*unix.sh && ./TripleA_*unix.sh
 
 <details>
 <summary> <strong>
-GitHub CLI Install and Configuration
+REAPER
 </strong> </summary>
 
-To install:
+Install dependencies
 ```
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
+sudo dnf install alsa libc6 libstdc++ libgdk-3 libmp3lame
 ```
-Auth Login:
+
+Download tar file from [this link](https://www.reaper.fm/download.php)
+
 ```
-gh auth login
+./install-reaper.sh
 ```
+
 </details>
+
+
+<details>
+<summary> <strong>
+Blender
+</strong> </summary>
+
+
+Download tar file from [this link](https://www.blender.org/download/release/)
+
+```
+sudo tar -xf ~/Downloads/Blender...
+```
+
+</details>
+
+<details>
+<summary> <strong>
+Godot (and .NET)
+</strong> </summary>
+
+Install .NET dependencies
+```
+glibc
+libcc
+ca-cacertificates
+openssl-libs
+libstdc++
+libicu
+tzdata
+krb5-libs
+(zlib)
+```
+
+Install  .NET
+```
+sudo dnf install dotnet-sdk-10.0
+sudo dnf install aspnetcore-runtime-10.0
+sudo dnf install dotnet-runtime-10.0
+```
+
+Download zip file from [this link](https://godotengine.org/download/linux/)
+
+```
+sudo -unzip ~/Downloads/Godot... -d /opt
+```
+
+</details>
+
+<details>
+<summary> <strong>
+Steam
+</strong> </summary>
+
+Get the external repository
+```
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+```
+Install:
+```
+sudo dnf install steam -y
+```
+
+</details>
+
+<details>
+<summary> <strong>
+Discord
+</strong> </summary>
+
+```
+sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf update
+sudo dnf install discord
+```
+
+</details>
+
+
+## SSH Configuration
+Install SSH and configure...
+```
+idk rn
+```
+
 
 ## TODO:
 - sshing to jackserver
