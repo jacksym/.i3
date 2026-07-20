@@ -53,7 +53,7 @@ chmod +x ./TripleA_*unix.sh && ./TripleA_*unix.sh
 
 <details>
 <summary> <strong>
-### GitHub CLI Install and Configuration
+GitHub CLI Install and Configuration
 </strong> </summary>
 
 To install:
@@ -69,8 +69,8 @@ gh auth login
 </details>
 
 ## TODO:
+- sshing to jackserver
 - get volume working
 - default everything to floating -- prepare for windows like workflow
 - ssh instructions
 - blender instructions
-
