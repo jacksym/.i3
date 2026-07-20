@@ -1,5 +1,5 @@
-#The i3 Configuration and Download Protocol
-(The Fedora i3 Spin Branch)
+# The i3 Configuration and Download Protocol
+### (The Fedora i3 Spin Branch)
 
 ## Base Packages
 
@@ -9,12 +9,16 @@ sudo dnf install vim vim-X11
                  zathura
 ```
 
+<details>
+<summary>
 ### Chrome
+</summary>
 ```
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager setopt google-chrome.enabled=1
 sudo dnf install google-chrome-stable
 ```
+</details>
 
 ### Spotify
 ```
@@ -32,7 +36,6 @@ sudo dnf install java-latest-openjdk
 Download Executable from [this link](https://triplea-game.org/download/)
 ```
 chmod +x ./TripleA_*unix.sh && ./TripleA_*unix.sh
-
 ```
 
 ### GitHub CLI Install and Configuration
@@ -42,10 +45,6 @@ sudo dnf install dnf5-plugins
 sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install gh
 ```
-To upgrade:
-```
-sudo dnf update gh
-```
 Auth Login:
 ```
 gh auth login
@@ -54,3 +53,6 @@ gh auth login
 ## TODO:
 - get volume working
 - default everything to floating -- prepare for windows like workflow
+- ssh instructions
+- blender instructions
+
