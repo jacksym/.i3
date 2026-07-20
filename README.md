@@ -10,9 +10,9 @@ sudo dnf install vim vim-X11
 ```
 
 <details>
-<summary>
+<summary> <strong>
 Chrome
-</summary>
+</strong> </summary>
 
 ```
 sudo dnf install fedora-workstation-repositories
@@ -22,7 +22,11 @@ sudo dnf install google-chrome-stable
 
 </details>
 
-### Spotify
+<details>
+<summary> <strong>
+Spotify
+</strong> </summary>
+
 ```
 sudo dnf install \
  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -30,8 +34,13 @@ sudo dnf install \
 sudo dnf install lpf-spotify-client
 lpf update
 ```
+</details>
 
-### TripleA (for fun)
+<details>
+<summary> <strong>
+TripleA (for fun)
+</strong> </summary>
+
 ```
 sudo dnf install java-latest-openjdk
 ```
@@ -40,7 +49,13 @@ Download Executable from [this link](https://triplea-game.org/download/)
 chmod +x ./TripleA_*unix.sh && ./TripleA_*unix.sh
 ```
 
+</details>
+
+<details>
+<summary> <strong>
 ### GitHub CLI Install and Configuration
+</strong> </summary>
+
 To install:
 ```
 sudo dnf install dnf5-plugins
@@ -51,6 +66,7 @@ Auth Login:
 ```
 gh auth login
 ```
+</details>
 
 ## TODO:
 - get volume working
