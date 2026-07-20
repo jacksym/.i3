@@ -11,13 +11,15 @@ sudo dnf install vim vim-X11
 
 <details>
 <summary>
-### Chrome
+Chrome
 </summary>
+
 ```
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager setopt google-chrome.enabled=1
 sudo dnf install google-chrome-stable
 ```
+
 </details>
 
 ### Spotify
