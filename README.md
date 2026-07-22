@@ -14,8 +14,10 @@ sudo dnf install vim vim-X11
 ## Sound
 
 ```
-sudo dnf install jack pulseaudio
+sudo dnf install jack pulseaudio alsa
 ```
+
+## dnf Installs
 
 <details>
 <summary> <strong>
@@ -61,6 +63,49 @@ sudo dnf install lpf-spotify-client
 lpf update
 ```
 </details>
+<details>
+<summary> <strong>
+Steam
+</strong> </summary>
+
+Get the external repository
+```
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
+```
+Install:
+```
+sudo dnf install steam -y
+```
+
+</details>
+
+<details>
+<summary> <strong>
+Discord
+</strong> </summary>
+
+```
+sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf update
+sudo dnf install discord
+```
+
+</details>
+
+<details>
+<summary> <strong>
+GIMP \& Inkscape
+</strong> </summary>
+Nice, they're in dnf
+
+```
+sudo dnf install gimp inkscape
+```
+
+</details>
+
+### Manual Installations
 
 <details>
 <summary> <strong>
@@ -84,7 +129,7 @@ REAPER
 
 Install dependencies
 ```
-sudo dnf install alsa libc6 libstdc++ libgdk-3 libmp3lame
+sudo dnf install libc6 libstdc++ libgdk-3 libmp3lame
 ```
 
 Download tar file from [this link](https://www.reaper.fm/download.php)
@@ -143,35 +188,7 @@ sudo -unzip ~/Downloads/Godot... -d /opt
 
 </details>
 
-<details>
-<summary> <strong>
-Steam
-</strong> </summary>
 
-Get the external repository
-```
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
-```
-Install:
-```
-sudo dnf install steam -y
-```
-
-</details>
-
-<details>
-<summary> <strong>
-Discord
-</strong> </summary>
-
-```
-sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf update
-sudo dnf install discord
-```
-
-</details>
 
 
 ## SSH Configuration
