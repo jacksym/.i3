@@ -9,6 +9,26 @@ sudo dnf install vim vim-X11
                  zathura
 ```
 
+## Sound
+We'll be using PipeWire -- pending on whether that's compatible with REAPER
+
+Just in case: (troubleshooting [doc](https://docs.fedoraproject.org/en-US/quick-docs/how-to-troubleshoot-sound-problems/)
+fixed this early
+```
+sudo update-pciids
+sudo dnf install --allowerasing pipewire-pulseaudio
+
+
+```
+
+## Uninstalls
+
+```
+sudo dnf remove mousepad
+sudo dnf remove Thunar
+rm -rf ~/.config/Thunar ~/.config/xfce4
+```
+
 ### Chrome
 ```
 sudo dnf install fedora-workstation-repositories
