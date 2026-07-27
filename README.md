@@ -32,11 +32,6 @@ sudo dnf remove Thunar
 rm -rf ~/.config/Thunar ~/.config/xfce4
 ```
 
-## Sound
-
-```
-sudo dnf install jack pulseaudio alsa
-```
 
 ## dnf Installs
 
