@@ -7,6 +7,7 @@
 sudo dnf install vim vim-X11
                  git
                  zathura
+                 xterm xscreensaver
 ```
 
 ## Sound
