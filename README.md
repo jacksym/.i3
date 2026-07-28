@@ -5,12 +5,35 @@
 
 ```
 sudo dnf install vim vim-X11
+                 xterm xscreensaver
+                 xinput
                  git
                  tar unzip
                  llvm clang clang-devel
                  zathura
-                 xterm xscreensaver
+                 feh
 ```
+
+## Git & GitHub CLI Install and Configuration
+git config
+```
+git config --global user.name "Jack"
+git config --global user.email "jacksymonds.js@gmail.com"
+
+```
+
+installing and configuring Github
+```
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+```
+Auth Login:
+```
+gh auth login
+```
+
+
 
 ## Sound
 We'll be using PipeWire -- pending on whether that's compatible with REAPER
@@ -47,24 +70,6 @@ sudo dnf install google-chrome-stable
 ```
 
 </details>
-
-<details>
-<summary> <strong>
-GitHub CLI Install and Configuration
-</strong> </summary>
-
-To install:
-```
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
-```
-Auth Login:
-```
-gh auth login
-```
-</details>
-
 
 <details>
 <summary> <strong>
@@ -209,8 +214,20 @@ sudo -unzip ~/Downloads/Godot... -d /opt
 
 ## SSH Configuration
 Install SSH and configure...
+
+make the key
 ```
-idk rn
+ssh-keygen -t ed25519 -a 100 <loc>
+```
+move the contents of the public key to `/home/jack/.ssh/<allowed-keys>`
+
+Add this to `~/.ssh/config`
+```
+Host jackserver
+    HostName ajs-online.org
+    User jack
+    Port 22222
+    IdentityFile <loc>
 ```
 
 
