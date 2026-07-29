@@ -152,7 +152,7 @@ bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT
 
 
 # Launches
-bindsym $mod+b exec firefox
+bindsym $mod+b exec google-chrome
 bindsym $mod+t exec gvim
 bindsym $mod+m exec spotify
 bindsym $mod+z exec zathura
