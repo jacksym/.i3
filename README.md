@@ -1,13 +1,12 @@
 # The i3 Configuration and Download Protocol
-### (The Fedora i3 Spin Branch)
+### (The Fedora Sway Spin Branch)
 
 ## Base Packages
 
 ```
-sudo dnf install vim vim-X11
-                 xterm xscreensaver
-                 xinput
+sudo dnf install vim gvim
                  git
+                 firefox
                  tar unzip
                  llvm clang clang-devel
                  zathura
@@ -232,8 +231,4 @@ Host jackserver
 
 
 ## TODO:
-- sshing to jackserver
-- get volume working
-- default everything to floating -- prepare for windows like workflow
-- ssh instructions
-- blender instructions
+- SWAY Completion
