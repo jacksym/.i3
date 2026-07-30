@@ -1,16 +1,16 @@
-# The i3 Configuration and Download Protocol
+# The Sway Configuration and Download Protocol
 ### (The Fedora Sway Spin Branch)
 
 ## Base Packages
 
 ```
 sudo dnf install vim gvim
+                 alacritty
                  git
                  firefox
                  tar unzip
                  llvm clang clang-devel
                  zathura
-                 feh
 ```
 
 ## Git & GitHub CLI Install and Configuration
@@ -18,7 +18,6 @@ git config
 ```
 git config --global user.name "Jack"
 git config --global user.email "jacksymonds.js@gmail.com"
-
 ```
 
 installing and configuring Github
@@ -42,8 +41,6 @@ fixed this early
 ```
 sudo update-pciids
 sudo dnf install --allowerasing pipewire-pulseaudio
-
-
 ```
 
 ## Uninstalls
