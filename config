@@ -38,6 +38,8 @@ include ~/.i3/keybindings.conf
 
 input "type:touchpad" {
   natural_scroll enabled
+  pointer_accel 0.1
+  scroll_factor 0.8
 }
 
 output * bg ~/.i3/walls/time_reversal.jpg fill
@@ -58,3 +60,7 @@ exec swayidle -w \
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+
+# gaps inner all set 10
+gaps inner 8
+gaps outer 4

@@ -1,0 +1,14 @@
+
+# Jack Symonds alacritty config
+
+[general]
+import = [
+    "~/.i3/alacritty/themes/catpuccin.toml",
+    # "~/.i3/alacritty/themes/dracula.toml",
+    # "~/.i3/alacritty/themes/gruvbox_dark.toml",
+    # "~/.i3/alacritty/themes/monokai.toml",
+    # "~/.i3/alacritty/themes/solarized_dark.toml",
+]
+
+[window]
+opacity = 0.8
