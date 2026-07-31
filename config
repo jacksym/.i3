@@ -10,7 +10,7 @@ set $down j
 set $left h
 set $right l
 
-set $terminal foot
+set $terminal alacritty
 # for_window [class="floatingTerm"] floating enable
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -47,9 +47,9 @@ output * bg ~/.i3/walls/time_reversal.jpg fill
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 'swaylock -f -C ./swaylock/config' \
 #         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'swaylock -f -C ./swaylock/config'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

@@ -1,0 +1,6 @@
+
+image=~/.i3/walls/omniscience.jpg
+scaling=center
+show-failed-attempts
+ring-color=#ff00ff
+`

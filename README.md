@@ -112,7 +112,7 @@ sudo dnf install discord
 
 <details>
 <summary> <strong>
-GIMP \& Inkscape
+GIMP & Inkscape
 </strong> </summary>
 Nice, they're in dnf
 
@@ -123,6 +123,22 @@ sudo dnf install gimp inkscape
 </details>
 
 ### Manual Installations
+
+<details>
+<summary> <strong>
+LogiOptions
+</strong> </summary>
+
+Download .rpm from [this link](https://openlogi.org/en/docs/getting-started/installation)
+
+```
+sudo rpm -i openlogi-*.rpm
+
+systemctl --user enable --now openlogi-agent.service
+```
+
+</details>
+
 
 <details>
 <summary> <strong>
