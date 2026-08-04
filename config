@@ -34,6 +34,7 @@ bar {
 hide_edge_borders smart
 
 
+include ~/.i3/colors.conf
 include ~/.i3/keybindings.conf
 
 input "type:touchpad" {
@@ -49,9 +50,9 @@ output * bg ~/.i3/walls/time_reversal.jpg fill
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -C ./swaylock/config' \
+          timeout 300 'swaylock -f -C ~/.i3/swaylock/config' \
 #         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -C ./swaylock/config'
+          before-sleep 'swaylock -f -C ~/.i3/swaylock/config'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
