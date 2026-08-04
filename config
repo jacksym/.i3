@@ -14,7 +14,7 @@ set $terminal alacritty
 bindsym $mod+Return exec alacritty --config-file ~/.i3/alacritty/alacritty.toml
 # for_window [class="floatingTerm"] floating enable
 set $menu rofi
-bindsym $mod+Space $menu
+bindsym $mod+space exec --no-startup-id rofi -show drun -config ~/.i3/rofi/config
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

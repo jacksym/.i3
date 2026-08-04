@@ -245,3 +245,14 @@ Host jackserver
 
 ## TODO:
 - SWAY Completion
+- swaybar completion
+    - bar colors
+- window colors
+- system fonts that aren't bad
+- rofi configuration
+    - rofi as a file manager?
+- clipboard
+- alacritty configuration (clipboard)
+- storage inspector
+- i3 mastery
+    - default floating
