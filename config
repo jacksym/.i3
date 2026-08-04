@@ -11,7 +11,10 @@ set $left h
 set $right l
 
 set $terminal alacritty
+bindsym $mod+Return exec alacritty --config-file ~/.i3/alacritty/alacritty.toml
 # for_window [class="floatingTerm"] floating enable
+set $menu rofi
+bindsym $mod+Space $menu
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -23,12 +26,17 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+
+## Start i3bar to display a workspace bar (plus the system information i3status
+## finds out, if available)
+# bar {
+#	font pango:DejaVu Sans Mono 8
+#	position top
+#	status_command i3status -c ~/.i3/status.conf
+#}
+
 bar {
-	font pango:DejaVu Sans Mono 8
-	position top
-	status_command i3status -c ~/.i3/status.conf
+    swaybar_command waybar
 }
 
 hide_edge_borders smart
