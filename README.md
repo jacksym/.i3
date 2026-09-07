@@ -168,7 +168,14 @@ sudo dnf install libc6 libstdc++ libgdk-3 libmp3lame
 Download tar file from [this link](https://www.reaper.fm/download.php)
 
 ```
+tar -xf ...
 ./install-reaper.sh
+```
+With the following options:
+```
+[i] install reaper
+[3] into /opt
+²±
 ```
 
 </details>

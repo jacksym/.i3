@@ -67,8 +67,17 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
+# for_window [window_role="pop-up"] floating enable
+# for_window [window_role="task_dialog"] floating enable
+for_window [app_id=".*"] floating enable
+for_window [class=".*"] floating enable
+for_window [app_id="Alacritty"] floating disable
+for_window [app_id="google-chrome-canary"] floating disable
+for_window [app_id="gvim"] floating disable
+# for_window [app_id="blender"] floating disable
+# for_window [class="REAPER"] floating disable
+# for_window [app_id="thunderbird"] floating disable
+
 
 # gaps inner all set 10
 gaps inner 8
