@@ -1,16 +1,25 @@
 # The Sway Configuration and Download Protocol
-### (The Fedora Sway Spin Branch)
+### (The Debian Sway Branch)
+## Initial (for sway to work)
+
+```
+sudo apt install sway swaybg swaylock swayidle waybar xwayland rofi alacritty wl-clipboard
+```
 
 ## Base Packages
 
 ```
-sudo dnf install vim gvim
-                 alacritty
+sudo dnf install vim vim-gtk3
+                 gurl gnupg
                  git
-                 firefox
                  tar unzip
                  llvm clang clang-devel
                  zathura
+                 texliive-full
+                 fonts-recommended
+                 fonts-font-awesome
+                 gnome-keyring
+                 nm-applet
 ```
 
 ## Git & GitHub CLI Install and Configuration
@@ -22,9 +31,15 @@ git config --global user.email "jacksymonds.js@gmail.com"
 
 installing and configuring Github
 ```
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
+(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
 ```
 Auth Login:
 ```
@@ -36,21 +51,11 @@ gh auth login
 ## Sound
 We'll be using PipeWire -- pending on whether that's compatible with REAPER
 
-Just in case: (troubleshooting [doc](https://docs.fedoraproject.org/en-US/quick-docs/how-to-troubleshoot-sound-problems/)
-fixed this early
 ```
-sudo update-pciids
-sudo dnf install --allowerasing pipewire-pulseaudio
-```
-
-## Uninstalls
+sudo apt install pipewire-audio
+systemctl --user restart wireplumber pipewire pipewire-pulse
 
 ```
-sudo dnf remove mousepad
-sudo dnf remove Thunar
-rm -rf ~/.config/Thunar ~/.config/xfce4
-```
-
 
 ## dnf Installs
 

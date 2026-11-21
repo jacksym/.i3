@@ -14,7 +14,7 @@ set $terminal alacritty
 bindsym $mod+Return exec alacritty --config-file ~/.i3/alacritty/alacritty.toml
 # for_window [class="floatingTerm"] floating enable
 set $menu rofi
-bindsym $mod+space exec --no-startup-id rofi -show drun -config ~/.i3/rofi/config
+bindsym $mod+space exec --no-startup-id rofi -show drun -config ~/.i3/rofi/config.rasi
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -35,6 +35,8 @@ set $ws6 "6"
 #	status_command i3status -c ~/.i3/status.conf
 #}
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 bar {
     swaybar_command waybar
 }
@@ -52,6 +54,15 @@ input "type:touchpad" {
 }
 
 output * bg ~/.i3/walls/time_reversal.jpg fill
+
+# output DP-1 {
+output 'ViewSonic Corporation VX2730D-4K YMT262300020' {
+    scale 2
+    mode 3840x2160@59.997Hz
+}
+
+
+
 
 ### Idle configuration
 #
@@ -72,11 +83,11 @@ exec swayidle -w \
 for_window [app_id=".*"] floating enable
 for_window [class=".*"] floating enable
 for_window [app_id="Alacritty"] floating disable
-for_window [app_id="google-chrome-canary"] floating disable
-for_window [app_id="gvim"] floating disable
-# for_window [app_id="blender"] floating disable
-# for_window [class="REAPER"] floating disable
-# for_window [app_id="thunderbird"] floating disable
+for_window [app_id="firefox"] floating disable
+for_window [app_id="vim-gtk3"] floating disable
+for_window [app_id="blender"] floating disable
+for_window [class="REAPER"] floating disable
+for_window [app_id="thunderbird"] floating disable
 
 
 # gaps inner all set 10
